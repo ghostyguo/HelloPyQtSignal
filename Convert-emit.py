@@ -7,7 +7,7 @@ from PyQt5.QtCore import pyqtSignal
 
 class MyMainWindow(QMainWindow, Ui_MainWindow):    
     
-    longTask = pyqtSignal(str) 
+    longTask = pyqtSignal() 
     
     def __init__(self, parent=None):    
         super(MyMainWindow, self).__init__(parent)
@@ -22,7 +22,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         print("calc begin!")
         degree = float(self.xEdit.text())*5/9
         self.yEdit.setText(str(degree))
-        self.longTask.emit(str(degree))  #
+        self.longTask.emit()  #
         print("calc end!")
         
     def runLongLong(self):
